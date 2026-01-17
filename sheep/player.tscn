@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://8bcmeyomcqne"]
+
+[ext_resource type="Texture2D" uid="uid://dn4rba6j5gthr" path="res://sheep/blue_sheep.png" id="1_d65ps"]
+[ext_resource type="Script" uid="uid://d070fkhuv1vhr" path="res://sheep/player.gd" id="1_t0js5"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(2.875, 2.625)
+texture = ExtResource("1_d65ps")
+script = ExtResource("1_t0js5")
