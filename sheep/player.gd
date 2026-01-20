@@ -1,7 +1,9 @@
 extends Sprite2D
 
 var velocity := Vector2(0, 0)
-var max_speed := 600.0
+var normal_speed := 600.0
+var max_speed := normal_speed
+var boost_speed := 1500.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,8 +19,15 @@ func _process(delta: float) -> void:
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
-	
+
+	if Input.is_action_just_pressed("boost"):
+		max_speed = boost_speed
+		get_node("Timer").start()
+		
 	velocity = direction * max_speed
 	position += velocity * delta
 	if direction.length() > 0.0:
 		rotation = velocity.angle()
+
+func _on_timer_timeout() -> void:
+	max_speed = normal_speed
