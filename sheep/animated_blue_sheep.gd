@@ -9,8 +9,8 @@ var steering_factor := 10.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_node("animated_blue_sheep").play("walking")
-
+	pass
+	# play("walking")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 	
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
+		
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
@@ -34,6 +35,9 @@ func _process(delta: float) -> void:
 	
 	if direction.length() > 0.0:
 		rotation = velocity.angle()
+		play("walking")
+	else:
+		play("idle")
 
 func _on_timer_timeout() -> void:
 	max_speed = normal_speed
