@@ -9,7 +9,7 @@ var steering_factor := 10.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_node("blue_sheep").play("walking")
+	get_node("animated_blue_sheep").play("walking")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
