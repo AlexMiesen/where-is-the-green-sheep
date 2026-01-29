@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://b06tpsi2r4mf3"]
+[gd_scene load_steps=4 format=3 uid="uid://b06tpsi2r4mf3"]
 
 [ext_resource type="PackedScene" uid="uid://byesdvrwep15n" path="res://sheep/animated_blue_sheep.tscn" id="1_2dt4v"]
+[ext_resource type="PackedScene" uid="uid://dgf54k70yiiff" path="res://sheep/main_thruster/main_thruster.tscn" id="2_pi0co"]
+[ext_resource type="PackedScene" uid="uid://bxfevggvxo634" path="res://background/space_background.tscn" id="3_c7na6"]
 
 [node name="SpaceLevel" type="Node2D"]
 
 [node name="animated_blue_sheep" parent="." instance=ExtResource("1_2dt4v")]
+position = Vector2(576, 320)
+
+[node name="MainThruster" parent="animated_blue_sheep" instance=ExtResource("2_pi0co")]
+position = Vector2(-29.257143, 5.818182)
+points = PackedVector2Array(0, 0, 33.333332, 0, 66.666664, 0)
+
+[node name="Camera2D" type="Camera2D" parent="animated_blue_sheep"]
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+
+[node name="SpaceBackground" parent="." instance=ExtResource("3_c7na6")]
