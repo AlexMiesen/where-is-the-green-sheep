@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://lrsxk1cu2vn3"]
+
+[ext_resource type="Script" uid="uid://bkunvmdsy6yd4" path="res://assets/health_pack.gd" id="1_gncy1"]
+[ext_resource type="Texture2D" uid="uid://b6poplhprls4k" path="res://assets/health_icon.svg" id="2_tgf43"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77dcu"]
+radius = 24.0
+
+[node name="HealthPack" type="Area2D" unique_id=1605989612]
+script = ExtResource("1_gncy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=158035615]
+texture = ExtResource("2_tgf43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481391278]
+shape = SubResource("CircleShape2D_77dcu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,11 +1,14 @@
-extends AnimatedSprite2D
+extends CharacterBody2D
 
-var velocity := Vector2(0, 0)
+@onready var sprite = $AnimatedSprite2D
+
+# var velocity := Vector2(0, 0) This doesn't need to be declared in CharacterBody2D because it already has a built in velocity property
 var normal_speed := 600.0
 var max_speed := normal_speed
 var boost_speed := 1500.0
 
 var steering_factor := 10.0
+var health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,13 +34,13 @@ func _process(delta: float) -> void:
 	var steering_vector := desired_velocity - velocity
 	
 	velocity += steering_vector * steering_factor * delta
-	position += velocity * delta
+	global_position += velocity * delta
 	
 	if direction.length() > 0.0:
-		rotation = velocity.angle()
-		play("walking")
+		sprite.rotation = velocity.angle()
+		sprite.play("walking")
 	else:
-		play("idle")
+		sprite.play("idle")
 
 func _on_timer_timeout() -> void:
 	max_speed = normal_speed

@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://djyidstytau4k"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djyidstytau4k"]
 
-[ext_resource type="Shader" uid="uid://c1wn8bidkbkcs" path="res://sheep/ship_flame.gdshader" id="1_7mf8j"]
+[ext_resource type="Shader" path="res://sheep/ship_flame.gdshader" id="1_7mf8j"]
 
 [sub_resource type="Curve" id="Curve_cxtrt"]
 _data = [Vector2(0, 0), -1.85185, 0.0, 0, 0, Vector2(0.474545, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 0), 0.0, 15.7895, 0, 0]

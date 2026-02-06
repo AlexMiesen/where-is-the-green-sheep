@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cgvnmpq6vnska"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cgvnmpq6vnska"]
 
 [ext_resource type="Shader" uid="uid://dx1setststrb8" path="res://background/star_field.gdshader" id="1_xe26a"]
 [ext_resource type="Texture2D" uid="uid://dk462tbnxbke8" path="res://background/space_pattern.png" id="2_x64ec"]
