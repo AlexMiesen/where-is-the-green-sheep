@@ -8,12 +8,13 @@ var max_speed := normal_speed
 var boost_speed := 1500.0
 
 var steering_factor := 10.0
-var health
+var health := 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	# play("walking")
+	get_node("UI/HealthBar").value = health
+	set_health(20)
+	$Area2D.area_entered.connect(_on_area_entered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,10 +38,17 @@ func _process(delta: float) -> void:
 	global_position += velocity * delta
 	
 	if direction.length() > 0.0:
-		sprite.rotation = velocity.angle()
+		rotation = velocity.angle()
 		sprite.play("walking")
 	else:
 		sprite.play("idle")
 
 func _on_timer_timeout() -> void:
 	max_speed = normal_speed
+
+func set_health(new_health: int) -> void:
+	health = new_health
+	$UI/HealthBar.value = health
+
+func _on_area_entered(area: Area2D) -> void:
+	set_health(health + 20)

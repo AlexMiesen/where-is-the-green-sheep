@@ -12,7 +12,8 @@ position = Vector2(518, 370)
 scale = Vector2(2.5624993, 2.5625)
 
 [node name="MainThruster" parent="animated_blue_sheep" unique_id=357384351 instance=ExtResource("2_pi0co")]
-position = Vector2(-29.257143, 5.818182)
+position = Vector2(-29.257141, 5.8181763)
+scale = Vector2(1, 0.9999999)
 points = PackedVector2Array(0, 0, 33.333332, 0, 66.666664, 0)
 
 [node name="Camera2D" type="Camera2D" parent="animated_blue_sheep" unique_id=1827179794]

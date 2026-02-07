@@ -106,6 +106,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4677m"]
 size = Vector2(58.514286, 50.57576)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ybl4"]
+size = Vector2(58.514286, 50.424248)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4677m"]
 bg_color = Color(0.62352943, 0.8666667, 0.31764707, 1)
 corner_radius_top_left = 4
@@ -159,8 +162,15 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "e756fa81f73ac45fd3257727c160c529"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1203419890]
+visible = false
 position = Vector2(-8.719308e-07, 5.742425)
 shape = SubResource("RectangleShape2D_4677m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1677335582]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1602053615]
+position = Vector2(-8.719308e-07, 5.8181825)
+shape = SubResource("RectangleShape2D_1ybl4")
 
 [node name="Timer" type="Timer" parent="." unique_id=529523150]
 one_shot = true
@@ -182,4 +192,5 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_4677m")
 value = 50.0
 show_percentage = false
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
