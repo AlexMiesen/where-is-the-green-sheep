@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgf54k70yiiff"]
 
 [ext_resource type="Material" uid="uid://djyidstytau4k" path="res://sheep/main_thruster/thruster_material.tres" id="1_hncak"]
-[ext_resource type="Texture2D" uid="uid://jroyif3arx2w" path="res://sheep/main_thruster/ship_flame_sdf.png" id="2_0uds3"]
+[ext_resource type="Texture2D" uid="uid://02y61a7ei7g4" path="res://sheep/main_thruster/ship_flame_sdf.png" id="2_0uds3"]
 [ext_resource type="Script" uid="uid://dya5d8v6verwu" path="res://sheep/main_thruster/main_thruster.gd" id="3_dpbpx"]
 [ext_resource type="Texture2D" uid="uid://b4eivixs3nn3n" path="res://sheep/spark.png" id="4_hbt2x"]
 
