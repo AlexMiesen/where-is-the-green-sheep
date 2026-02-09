@@ -12,18 +12,15 @@ var health := 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_node("UI/HealthBar").value = health
-	set_health(20)
 	$Area2D.area_entered.connect(_on_area_entered)
+	set_health(health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)
-	
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 		
-
 	if direction.length() > 1.0:
 		direction = direction.normalized()
 
@@ -37,18 +34,19 @@ func _process(delta: float) -> void:
 	velocity += steering_vector * steering_factor * delta
 	global_position += velocity * delta
 	
-	if direction.length() > 0.0:
+	if velocity.length() > 0.0:
 		rotation = velocity.angle()
 		sprite.play("walking")
 	else:
 		sprite.play("idle")
+
 
 func _on_timer_timeout() -> void:
 	max_speed = normal_speed
 
 func set_health(new_health: int) -> void:
 	health = new_health
-	$UI/HealthBar.value = health
+	get_node("UI/HealthBar").value = health
 
 func _on_area_entered(area: Area2D) -> void:
 	set_health(health + 20)
