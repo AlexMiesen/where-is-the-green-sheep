@@ -9,6 +9,7 @@ var boost_speed := 1500.0
 
 var steering_factor := 10.0
 var health := 20
+var gem_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,7 +35,7 @@ func _process(delta: float) -> void:
 	velocity += steering_vector * steering_factor * delta
 	global_position += velocity * delta
 	
-	if velocity.length() > 0.0:
+	if direction.length() > 0.0:
 		rotation = velocity.angle()
 		sprite.play("walking")
 	else:
@@ -48,5 +49,12 @@ func set_health(new_health: int) -> void:
 	health = new_health
 	get_node("UI/HealthBar").value = health
 
-func _on_area_entered(area: Area2D) -> void:
-	set_health(health + 20)
+func set_gem_count(new_count: int) -> void:
+	gem_count = new_count
+	get_node("UI/Label").text = "x" + str(gem_count)
+
+func _on_area_entered(area_that_entered: Area2D) -> void:
+	if area_that_entered.is_in_group("gem"):
+		set_gem_count(gem_count + 1)
+	elif area_that_entered.is_in_group("health_pack"):
+		set_health(health + 20)
