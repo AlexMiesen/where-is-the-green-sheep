@@ -8,7 +8,7 @@
 [node name="SpaceLevel" type="Node2D" unique_id=1822893192]
 
 [node name="AnimatedBlueSheep" parent="." unique_id=970105575 instance=ExtResource("1_2dt4v")]
-position = Vector2(518, 370)
+position = Vector2(568, 328.00003)
 scale = Vector2(2.5624993, 2.5625)
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedBlueSheep" unique_id=1827179794]
@@ -23,3 +23,4 @@ points = PackedVector2Array(0, 0, 33.333332, 0, 66.666664, 0)
 [node name="SpaceBackground" parent="." unique_id=747437146 instance=ExtResource("3_c7na6")]
 
 [node name="SpawnRandomItem" parent="." unique_id=2136178698 instance=ExtResource("4_3k72r")]
+position = Vector2(568, 328)
