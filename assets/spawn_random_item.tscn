@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bbqxb3qpxqvi6"]
+
+[ext_resource type="Script" uid="uid://ceyymm7fv76ep" path="res://assets/spawn_random_item.gd" id="1_g2fg4"]
+
+[node name="SpawnRandomItem" type="Node2D" unique_id=2136178698]
+position = Vector2(424, 352)
+script = ExtResource("1_g2fg4")
+
+[node name="Timer" type="Timer" parent="." unique_id=869725736]
+autostart = true

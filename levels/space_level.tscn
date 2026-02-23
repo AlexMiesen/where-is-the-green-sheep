@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byesdvrwep15n" path="res://sheep/animated_blue_sheep.tscn" id="1_2dt4v"]
 [ext_resource type="PackedScene" uid="uid://dgf54k70yiiff" path="res://sheep/main_thruster/main_thruster.tscn" id="2_pi0co"]
 [ext_resource type="PackedScene" uid="uid://bxfevggvxo634" path="res://background/space_background.tscn" id="3_c7na6"]
-[ext_resource type="PackedScene" uid="uid://lrsxk1cu2vn3" path="res://assets/health_pack.tscn" id="4_3k72r"]
-[ext_resource type="PackedScene" uid="uid://dwla04mvchhpj" path="res://assets/gem.tscn" id="5_8h824"]
+[ext_resource type="PackedScene" uid="uid://bbqxb3qpxqvi6" path="res://assets/spawn_random_item.tscn" id="4_3k72r"]
 
 [node name="SpaceLevel" type="Node2D" unique_id=1822893192]
 
@@ -23,20 +22,4 @@ points = PackedVector2Array(0, 0, 33.333332, 0, 66.666664, 0)
 
 [node name="SpaceBackground" parent="." unique_id=747437146 instance=ExtResource("3_c7na6")]
 
-[node name="Gem" parent="." unique_id=526881403 instance=ExtResource("5_8h824")]
-position = Vector2(496, 200)
-
-[node name="Gem2" parent="." unique_id=596474199 instance=ExtResource("5_8h824")]
-position = Vector2(224, 352)
-
-[node name="Gem3" parent="." unique_id=2033550923 instance=ExtResource("5_8h824")]
-position = Vector2(768, 464)
-
-[node name="HealthPack" parent="." unique_id=1605989612 instance=ExtResource("4_3k72r")]
-position = Vector2(288, 192)
-
-[node name="HealthPack2" parent="." unique_id=1620006796 instance=ExtResource("4_3k72r")]
-position = Vector2(440, 584)
-
-[node name="HealthPack3" parent="." unique_id=657050232 instance=ExtResource("4_3k72r")]
-position = Vector2(792, 256)
+[node name="SpawnRandomItem" parent="." unique_id=2136178698 instance=ExtResource("4_3k72r")]
