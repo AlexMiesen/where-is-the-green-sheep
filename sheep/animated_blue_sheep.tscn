@@ -213,5 +213,8 @@ offset_bottom = 11.363636
 text = "x0"
 label_settings = SubResource("LabelSettings_tx7pa")
 
+[node name="DrainHealth" type="Timer" parent="." unique_id=651319858]
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

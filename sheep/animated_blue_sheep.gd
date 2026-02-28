@@ -8,13 +8,15 @@ var max_speed := normal_speed
 var boost_speed := 1500.0
 
 var steering_factor := 10.0
-var health := 20
+var health := 50
 var gem_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Area2D.area_entered.connect(_on_area_entered)
 	set_health(health)
+	
+	get_node("DrainHealth").timeout.connect(_drain_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -48,6 +50,12 @@ func _on_timer_timeout() -> void:
 func set_health(new_health: int) -> void:
 	health = new_health
 	get_node("UI/HealthBar").value = health
+
+func _drain_health() -> void:
+	set_health(health - 4)
+	if health <= 0:
+		queue_free()
+
 
 func set_gem_count(new_count: int) -> void:
 	gem_count = new_count
