@@ -126,6 +126,7 @@ outline_color = Color(0.0038480829, 0.0044353534, 0.0031562939, 1)
 [node name="AnimatedBlueSheep" type="CharacterBody2D" unique_id=333166601]
 texture_filter = 1
 scale = Vector2(4.375, 4.125)
+collision_mask = 2
 script = ExtResource("1_4677m")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
@@ -174,6 +175,7 @@ position = Vector2(-8.719308e-07, 5.742425)
 shape = SubResource("RectangleShape2D_4677m")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1677335582]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1602053615]
 position = Vector2(-8.719308e-07, 5.8181825)
