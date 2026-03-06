@@ -23,4 +23,3 @@ points = PackedVector2Array(0, 0, 33.333332, 0, 66.666664, 0)
 [node name="SpaceBackground" parent="." unique_id=747437146 instance=ExtResource("3_c7na6")]
 
 [node name="SpawnRandomItem" parent="." unique_id=2136178698 instance=ExtResource("4_3k72r")]
-position = Vector2(568, 328)
